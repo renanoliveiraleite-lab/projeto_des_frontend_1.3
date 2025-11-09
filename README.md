@@ -1,4 +1,4 @@
-Link para o site ONG Música Viva: https://creative-piroshki-719695.netlify.app/
+
 # ONG Música Viva
 
 Este repositório apresenta a versão final do projeto **ONG Música Viva**, contendo o desenvolvimento completo do site com HTML, CSS e JavaScript, além da publicação em ambiente de produção através do **GitHub Pages**.
@@ -11,7 +11,7 @@ O objetivo desta entrega é disponibilizar o site ao público de forma acessíve
 
 O projeto está disponível publicamente no link:
 
-🔗 **GitHub Pages:** *[insira aqui o link após publicação]*
+🔗 **Netlify.app:** https://creative-piroshki-719695.netlify.app
 
 > Para visualizar o site, basta clicar no link acima. O acesso pode ser feito por computador, celular ou tablet.
 
