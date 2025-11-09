@@ -1,0 +1,336 @@
+/* Todos os elementos */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*Corpo*/
+body{
+	background-color: #f2e9e4;
+	color: #455936;
+	font-family: "Urbanist", sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	
+}
+
+/* ... (regras gerais e header, navbar, nav-menu, etc. permanecem as últimas corrigidas) ... */
+
+/* === REGRAS DE ACESSIBILIDADE WCAG AA === */
+
+/* 1. Foco de Teclado (WCAG 2.1.1 e 2.4.7) */
+*:focus-visible {
+    outline: 3px solid #f2e9e4; /* Cor de foco clara */
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+/* Links do header e footer em hover/focus */
+.nav-menu a:hover, .nav-menu a:focus-visible, footer a:hover, footer a:focus-visible {
+    color: #000;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+
+/* 2. Modo Escuro e Alto Contraste (Acessível) */
+/* Adicionado um seletor para ativar o modo de alto contraste via JS */
+body.high-contrast {
+    background-color: black !important;
+    color: white !important;
+}
+body.high-contrast header, body.high-contrast footer {
+    background: #000 !important;
+    color: yellow !important;
+    border-bottom: 2px solid yellow;
+}
+body.high-contrast p, body.high-contrast ul, body.high-contrast li {
+    color: white !important;
+    background: black !important;
+}
+body.high-contrast a, body.high-contrast button {
+    color: yellow !important;
+    text-decoration: underline;
+}
+
+/*Cabeçalho*/
+
+header{
+	background: linear-gradient(135deg, #868c79 0%, #254018 100%);
+	display: flex;
+	align-items: center;          
+	justify-content: space-between; 
+	padding: 10px 40px;
+	width: 100%; 
+	flex-wrap: wrap; 
+	position: relative; 
+    z-index: 100; 
+}
+/* Mobile toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #f2e9e4;
+    font-size: 1.8rem; 
+    cursor: pointer;
+    z-index: 9999; 
+    
+    /* Aumentar a área de clique */
+    padding: 10px;        
+    width: 50px;          
+    height: 50px;         
+    display: flex;        
+    align-items: center;  
+    justify-content: center;
+}
+
+/* Logo bem alinhada à esquerda */ 
+.imagem_logo{
+	height: 50px;
+	width: auto;
+	display: block;
+	margin-left: 0;               
+}
+
+/* --- NAVBAR (Desktop Menu) --- */
+.navbar{
+  position: relative;
+  display: block;
+}
+
+/* Menu principal (DESKTOP) */
+.nav-menu{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-menu a{
+  text-decoration: none;
+  color: #f2e9e4;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover{
+  color: #000;
+}
+
+/* Submenu */
+.dropdown{
+  position: relative;
+  cursor: pointer;
+}
+
+.submenu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #254018;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 10;
+}
+
+.submenu li a{
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #f2e9e4;
+}
+
+.submenu li a:hover{
+  background-color: #455936;
+}
+
+/* Mostrar submenu no hover (desktop) - MIN-WIDTH 1025px */
+@media (min-width: 1025px){
+  .dropdown:hover .submenu{
+    display: block;
+  }
+  .menu-toggle {
+    display: none; 
+  }
+  .navbar {
+    display: block;
+  }
+}
+
+.dropdown.active .submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* === REGRAS DO MENU MOBILE DUPLICADO (nav-mobile) === */
+
+.nav-mobile{
+	overflow-x: hidden; 
+	height: 100vh; 
+	width: 0; 
+	padding: 0;
+	position: fixed; 
+	top: 0;
+	right: 0;
+	background-color: #254018; 
+	flex-direction: column;
+	align-items: center;
+	z-index: 1000;
+	transition: width 0.3s ease, padding 0.3s ease; 
+	display: flex; 
+    padding-top: 70px;
+}
+
+/* Classe ativada pelo JavaScript para mostrar o menu */
+.nav-mobile.active{
+	width: 300px;
+	padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.nav-mobile li{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #455936;
+}
+
+.nav-mobile .submenu {
+    position: static;
+    background: #455936;
+    min-width: auto;
+    width: 100%;
+    margin-top: 5px;
+    display: none; 
+}
+
+.nav-mobile .dropdown.active .submenu {
+    display: flex;
+}
+
+/* RESPONSIVO - BREAKPOINT 1024px (Mobile/Tablet) */
+@media (max-width: 1024px){
+  
+.menu-toggle {
+    display: flex; 
+  }
+  
+.navbar {
+    display: none; 
+  }
+
+}
+/* Conteudo  */
+main{
+	max-width: 1200px;   
+	margin: 0 auto;    
+	padding: 0 40px;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+section{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+p{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: justify;
+	color: #254018;
+	margin-top: 7px;
+}
+img{
+	width: 100%; 
+    max-width: 500px; 
+    height: auto;
+    border-radius: 8px;
+    display: block;       
+    margin: 0 auto; 	    
+}
+ul li{
+	max-width: 700px;
+	margin: 0 auto;
+	text-align: justify;  
+	list-style-position: inside;
+	padding-left: 0;  
+	margin-bottom: 20px;
+
+}
+h1{
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+	text-shadow: 2px 2px 4px rgba(0,0,0,3);
+	color: #092601;
+	text-align: center;
+	
+}
+h2{
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
+	text-shadow: 1px 1px 2px rgba(0,0,0,3);
+	color: #092601;
+	text-align: center;
+	
+}
+h3{
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	text-shadow: 1px 1px 2px rgba(0,0,0,3);
+	color: #092601;
+	text-align: center;
+	
+}
+/* Formulario */
+form{
+	border: 1px solid #254018;
+	border-radius: 8px;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	
+}
+form input{
+	width: 100%;
+	padding: 0.6rem;
+	margin-bottom: 1rem;
+	border: 1px solid #868c79;
+	border-radius: 4px;
+	font-size: 1rem;
+}
+
+fieldset{
+	border: 2px solid #455936;
+	border-radius: 8px;
+	padding: 1rem;
+}
+legend{
+	color:#092601;
+	padding: 0 0.5rem;
+}
+.butao_formulario{
+	background-color: #092601;
+	padding: 0.8rem;
+	color: #f2e9e4;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.butao_formulario:hover {
+	background-color: #254018;
+}
+/* Rodapé */
+footer{
+	background: linear-gradient(135deg, #868c79 0%, #254018 100%);
+	color: #f2e9e4;
+	padding: 0 0.5rem;
+	text-align: center;
+	font-size: 24px;
+	padding: 0 2rem;
+}
+div a {
+	color: #f2e9e4;
+	padding: 0 0.5rem;
+}
