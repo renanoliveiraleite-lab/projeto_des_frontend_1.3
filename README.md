@@ -55,27 +55,6 @@ Esta versão marca a conclusão do projeto, incluindo:
 
 ---
 
-## 📌 Passos Realizados para o Deploy
-
-Os procedimentos abaixo foram realizados para publicar o site:
-
-1. Criação do repositório no GitHub;
-2. Upload do código-fonte devidamente organizado;
-3. Configuração do **GitHub Pages** utilizando a branch `main`;
-4. Verificação e testes de acessibilidade e responsividade após publicação.
-
----
-
-## 📎 Como Publicar no GitHub Pages (caso precise refazer)
-
-Caso seja necessário refazer o deploy, siga os passos:
-
-1. Acesse o repositório no GitHub;  
-2. Clique em **Settings** → **Pages**;  
-3. Em *Source*, selecione a branch `main` e clique em **Save**;  
-4. Aguarde o processamento até o link ser gerado.
-
----
 
 ## ✒️ Autor
 
